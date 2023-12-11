@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	
+	<div>
+		<span id="firstname"></span><br>
+		<span id="lastname"></span><br>
+		<span id="username"></span><br>
+		<span id="email"></span><br>
+		<span id="avatar"></span><br>
+		<span id="gender"></span><br>
+		<span id="phonenumber"></span><br>
+		<span id="insurance"></span><br>
+		<span id="dateofbirth"></span><br>
+		<span id="suraj"></span><br>
+		<span id="address"></span><br>
+		<span id="credit"></span><br>
+		<img id="rk" style="width: auto;height: auto;">
+		<img id="sb" style="width: auto;height: auto;">
+		<img id="bk" style="width: auto;height: auto;">
+	
+	
+	
+	
+		 
+                
+	</div>
+ 
+
+
+
+	<button>SHOW JSON DATA</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+	$(document).ready(function(){
+
+		$("button").click(function(){
+
+			$.ajax({
+				url: 'https://randomuser.me/api/', 
+				type :'GET' ,
+				dataType:'text',
+				success:successFn,
+				error:errorFn,
+			});
+
+			function successFn(result){
+                console.log(result);
+                var output=JSON.parse(result);
+                $("#firstname").html("results:- "+"gender:- "+ output.results[0].gender+", "+"name:  "+"title:- "+output.results[0].name.title+", "+
+				"first:- "+output.results[0].name.first+", "+"last:- "+output.results[0].name.last+", ");
+				$("#lastname").html("location:- "+ "street:-  "+"number:- "+ output.results[0].location.street.number+", "+"name:- "+output.results[0].location.street.name+", ");
+				$("#username").html("city:- "+output.results[0].location.city+", "+"state:- "+output.results[0].location.state+", "+"country:- "+output.results[0].location.country+","
+				+"postcode:- "+output.results[0].location.postcode+", ");
+				$("#email").html("coordinates:- "+"latitude:- "+output.results[0].location.coordinates.latitude+", "+"longitude:- "+output.results[0].location.coordinates.longitude+", ");
+				$("#avatar").html("timezone:- "+"offset:- "+output.results[0].location.timezone.offset+", "+"description:- "+output.results[0].location.timezone.description+", "+"email:- "+output.results[0].email+", ");
+				$("#gender").html("login:- "+"uuid:-  "+output.results[0].login.uuid+", "+"username:- "+output.results[0].login.username+", "+"password:- "+output.results[0].login.password+", "+"salt:- "+output.results[0].login.salt+", ");
+				$("#phonenumber").html("md5:- "+output.results[0].login.md5+", "+"shal:- "+output.results[0].login.sha1+", "+"sha256:- "+output.results[0].login.sha256+", ")
+                $("#insurance").html("dob:- "+ "date:- "+output.results[0].dob.date+", "+"age:- "+output.results[0].dob.age+", "+"registered:- "+"date:- "+output.results[0].registered.date+", "+"age:- "+output.results[0].registered.age+", "+
+				"phone:- "+output.results[0].phone+", "+"cell:- "+output.results[0].cell+", ");
+				$("#dateofbirth").html("id:- "+"name:- "+output.results[0].id.name+","+"value:- "+output.results[0].id.value+",");
+				$("#address").html("info:- "+"seed:- "+output.info.seed+", "+"results:- "+output.info.results+", "+"page:- "+output.info.page+", "+"version:- "+output.info.version)
+				$("#rk").attr("src",output.results[0].picture.large);
+				$("#sb").attr("src",output.results[0].picture.medium);
+				$("#bk").attr("src",output.results[0].picture.thumbnail);
+				
+
+
+                
+			}
+			function errorFn(xhr,status,str){
+
+				console.log("Inside Error");
+				console.log(xhr);
+				console.log(status);
+				console.log(str);
+			}
+
+		});
+
+	});
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	
+	<div>
+		<span id="firstname"></span><br>
+		<span id="lastname"></span><br>
+		<span id="username"></span><br>
+		<span id="email"></span><br>
+		<span id="avatar"></span><br>
+		<span id="gender"></span><br>
+		<span id="phonenumber"></span><br>
+		<span id="insurance"></span><br>
+		<span id="dateofbirth"></span><br>
+		<span id="emoloyment"></span><br>
+		<span id="address"></span><br>
+		<span id="credit"></span><br>
+	
+	
+		 
+                
+	</div>
+ 
+
+
+
+	<button>SHOW JSON DATA</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+	$(document).ready(function(){
+
+		$("button").click(function(){
+
+			$.ajax({
+				url:' https://random-data-api.com/api/v2/users', 
+				type :'GET' ,
+				dataType:'text',
+				success:successFn,
+				error:errorFn,
+			});
+
+			function successFn(result){
+                console.log(result);
+                 var output=JSON.parse(result);
+                 $("#firstname").html('first name:- '+ output.first_name);
+				 $("#lastname").html('last name:- ' + output.last_name);
+				 $("#username").html('username:- ' + output.username);
+				 $("#email").html('email:- ' + output.email);
+				 $("#avatar").html('avatar:- ' + output.avatar);
+				 $("#gender").html('gender:- ' + output.gender);
+				 $("#phonenumber").html('phone number:- ' + output.phone_number);
+				 $("#insurance").html('insurance number:- ' + output.social_insurance_number);
+				 $("#dateofbirth").html('date of birth:- ' + output.date_of_birth);
+				 $("#emoloyment").html('employment:- ' + output.employment.title+" , " +"keyskill:- " +output.employment.key_skill );
+				 $("#address").html('address:- ' + output.address.city+" , " +"street name:- " +output.address.street_name+" , "+ "street address:- " +output.address.street_address
+				+" , "+ "zip code:- "+output.address.zip_code+ "<br>"+","+"state:-"+output.address.state+","+"country:-"+output.address.country+", "+'lat:- ' + output.address.coordinates.lat+","+'lng:- ' + output.address.coordinates.lng +","),
+				 $("#credit").html("cc_number:- "+output.credit_card.cc_number+",");
+				 $("#credit").html("plan:- "+output.subscription.plan+","+"status:- "+output.subscription.status+","+"payment method:- "+output.subscription.payment_method+","+"term:- "+output.subscription.term)
+
+
+                
+                
+
+			 
+
+			 
+			}
+			function errorFn(xhr,status,str){
+
+				console.log("Inside Error");
+				console.log(xhr);
+				console.log(status);
+				console.log(str);
+			}
+
+		});
+
+	});
+</script>
+
+</html>

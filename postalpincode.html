@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	
+	<div>
+		<span id="message"></span><br>
+		<span id="postoffice"></span><br>
+		<span id="circle"></span><br>
+	
+    </div>
+    <button>SHOW JSON DATA</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+	$(document).ready(function(){
+
+		$("button").click(function(){
+
+			$.ajax({
+				url: 'https://api.postalpincode.in/postoffice/Ambade', 
+				type :'GET' ,
+				dataType:'text',
+				success:successFn,
+				error:errorFn,
+			});
+
+			function successFn(result){
+                console.log(result);
+                 var output=JSON.parse(result);
+                 $("#message").html("Message:- "+ output[0].Message+" , "+"status:- "+output[0].Status+", ");
+                
+                 $("#postoffice").html("postoffice "+ "Name:- "+output[0].PostOffice[0].Name+", "+
+                 "Description:- "+output[0].PostOffice[0].Description+", "+"BranchType:- "+output[0].PostOffice[0].BranchType+","+"DeliveryStatus:- "+output[0].PostOffice[0].DeliveryStatus+", ");
+                 $("#circle").html("Circle:- "+output[0].PostOffice[0].Circle+", "+ "District:- "+output[0].PostOffice[0].District+", "+"Division:- "+output[0].PostOffice[0].Division+","+"Region:- "+output[0].PostOffice[0].Region+", "+"State:- "+output[0].PostOffice[0].State+", "
+                 +"Country:- "+output[0].PostOffice[0].Country+", "+"Pincode:- "+output[0].PostOffice[0].Pincode);
+			}
+			function errorFn(xhr,status,str){
+
+				console.log("Inside Error");
+				console.log(xhr);
+				console.log(status);
+				console.log(str);
+			}
+
+		});
+
+	});
+</script>
+
+</html>
