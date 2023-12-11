@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="apples.jpg" style="height:300px;width:300px;">
+    <br>
+    <br>
+    <button id="one">before</button><br><br>
+    <button id="two">after</button>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#one").click(function(){
+                $("img").before("welcome");
+            });
+            $("#two").click(function(){
+                $("img").after("TO")
+            });
+        });
+    </script>
+</body>
+</html>

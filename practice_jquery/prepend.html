@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>suraj</p>
+    List:-
+    <ol>
+        <li>hello</li>
+        <li>everyone</li>
+    </ol>
+
+    <button id="sb">Prepend Paragraph</button>
+    <button id="rk">Prepend List</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#sb").click(function(){
+                $("p").prepend("My Name Is ");
+            });
+            $("#rk").click(function(){
+                $("ol").prepend("<li>hi</li>");
+            });
+        });
+    </script>
+</body>
+</html>

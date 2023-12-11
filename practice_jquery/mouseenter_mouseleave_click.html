@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>suraj</p>
+    <p>rajaram</p>
+    <p>bhilare</p>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").on({
+                mouseenter: function(){
+                    $(this).css("background-color","gray");
+                },
+                mouseleave: function(){
+                    $(this).css("background-color","yellow");
+                },
+                click: function(){
+                    $(this).css("background-color","red");
+                }
+            });
+        });
+
+        //mouseenter function when mouse on p tag color will be gray display,
+        //mouselesave function when mouseenter leave the p tag color will be yellow display,
+        //click function is uesd when we click on p tag color will be display red.
+    </script>
+</body>
+</html>

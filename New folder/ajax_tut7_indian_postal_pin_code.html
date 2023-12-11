@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Postal PIN Code API</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.ajax({
+                    url: "https://api.postalpincode.in/pincode/411048",
+                    type: "GET",
+                    dataType: "text",
+                    success: successFn,
+                    error: errorFn,
+                })
+                function successFn(result){
+                    
+                    console.log(result);
+
+                    var output = JSON.parse(result);
+
+                    $("#span1").html("Message: " + output[0].Message + "<br><br>");
+                    
+                    $("#span2").html("Status: " + output[0].Status + "<br><br>");
+
+                    $("#span3").html("PostOffice:- <br><br>" + "<li>" +"Name: " + output[0].PostOffice[0].Name +"</li>"+"<br>");
+                    
+                    $("#span4").html("<li>" + "Description: " + output[0].PostOffice[0].Description + "</li>"+"<br>");
+
+                    $("#span5").html("<li>" + "BranchType: " + output[0].PostOffice[0].BranchType + "</li>"+"<br>");
+
+                    $("#span6").html("<li>" + "DeliveryStatus: " + output[0].PostOffice[0].DeliveryStatus + "</li>"+"<br>");
+
+                    $("#span7").html("<li>" + "Circle: " + output[0].PostOffice[0].Circle + "</li>"+"<br>");
+
+                    $("#span8").html("<li>" + "District: " + output[0].PostOffice[0].District + "</li>"+"<br>");
+
+                    $("#span9").html("<li>" + "Division: " + output[0].PostOffice[0].Division + "</li>"+"<br>");
+
+                    $("#span10").html("<li>" + "Region: " + output[0].PostOffice[0].Region + "</li>"+"<br>");
+
+                    $("#span11").html("<li>" + "Block: " + output[0].PostOffice[0].Block + "</li>"+"<br>");
+
+                    $("#span12").html("<li>" + "State: " + output[0].PostOffice[0].State + "</li>"+"<br>");
+
+                    $("#span13").html("<li>" + "Country: " + output[0].PostOffice[0].Country + "</li>"+"<br>");
+
+                    $("#span14").html("<li>" + "Pincode: " + output[0].PostOffice[0].Pincode + "</li>");
+                    
+                };
+                function errorFn(xhr, status, str){
+                    console.log("Error")
+                    console.log(xhr)
+                    console.log(status)
+                    console.log(str)
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h1>Indian Postal PIN Code</h1><br>
+
+    <span id="span1"></span>
+
+    <span id="span2"></span>
+
+    <span id="span3"></span>
+
+    <span id="span4"></span>
+
+    <span id="span5"></span>
+
+    <span id="span6"></span>
+
+    <span id="span7"></span>
+
+    <span id="span8"></span>
+
+    <span id="span9"></span>
+    
+    <span id="span10"></span>
+
+    <span id="span11"></span>
+    
+    <span id="span12"></span>
+    
+    <span id="span13"></span>
+    
+    <span id="span14"></span>
+
+    <br><br>
+
+    <button>Show JSON Data</button>
+</body>
+</html>

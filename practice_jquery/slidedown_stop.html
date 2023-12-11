@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sb {
+          height: 20px; 
+          background-color: blueviolet;
+          text-align: center;
+          color: white;
+
+            }
+
+        #rk{
+
+            height: 200px;
+            background-color: aqua;
+            display: none;
+            text-align: center;
+            padding: 100px;
+            color: white;
+        }
+
+    </style>
+ </head>
+ <body>
+    <h1>slidedown and stop slide</h1>
+    <button id="nc">STOP SLIDING</button>
+    <div id="sb">click Here To For Amazing For You</div>
+    <div id="rk">Your Name Suraj</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#sb").click(function(){
+                $("#rk").slideDown(4000);
+            });
+            $("#nc").click(function(){
+                $("#rk").stop();
+            });
+        });
+    </script>
+ </body>
+ </html>

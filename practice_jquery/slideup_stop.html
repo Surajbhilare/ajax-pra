@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            background-color: darkolivegreen; 
+            height: 50px;  
+            text-align: center;
+            color: white;
+        }
+        .two{
+            background-color: yellow;
+            height: 200px;
+            text-align: center;
+            color: white;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>SLIDEUP STOP</h1>
+    <button id="me" >STOP</button><br>
+    <div class="one">HELLO</div>
+    <div class="two">Suraj</div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".one").click(function(){
+                $(".two").slideUp(4000);
+            });
+            $("#me").click(function(){
+                $(".two").stop();
+            });
+        });
+    </script>
+</body>
+</html>

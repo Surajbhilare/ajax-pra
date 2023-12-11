@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            height: 200px;
+            width: 300px;
+            padding: 20px;
+            margin: 5px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <button>show height width</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var txt=" ";
+                txt+= "width of div:- "+$("div").width()+ "<br>"
+                txt+= "height of div:- "+$("div").height();
+                $("div").html(txt);
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is the set content attribute</h1>
+    <p id="a">this is the flower</p>
+    <p id="b">this is html</p>
+    <label>this is the input field:-</label>
+    <input id="sk" type="text" name="name" placeholder="i am suraj"><br><br>
+    <a id="bk" href="https://www.amazon.in/">Amazon</a><br><br>
+    <button id="button1">set text</button>
+    <button id="button2">set html</button>
+    <button id="button3">set value</button>
+    <button id="button4">set/change attribute</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("#a").text("suraj bhilare");
+            });
+            $("#button2").click(function(){
+                $("#b").html("<b>hello suraj</b>");
+            });
+            $("#button3").click(function(){
+                $("#sk").val("rushi");
+            });
+            $("#button4").click(function(){
+                $("#bk").attr("href","https://www.flipkart.com/")
+            });
+        });
+    </script>
+</body>
+</html>

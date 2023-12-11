@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width:100px;
+            background-color: tomato;
+            text-align: center;
+            padding: center;
+        }
+    </style>
+</head>
+<body>
+    <button>Start animation</button>
+    <p>this is example of animation</p>
+    <div class="one">this is the box with tomato color</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+            var element=$("div");
+            element.animate({
+                height:"300px",
+                width:"300px",
+                fontsize:"30px",
+            });
+            });
+            
+        });
+        // $(document).ready(function(){
+        //     $("button").click(function(){
+        //         var element=$("div");
+            
+        //     });
+        // });
+    </script>
+</body>
+</html>

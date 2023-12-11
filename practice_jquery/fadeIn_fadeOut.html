@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="one">fadeIn</button>
+    <button id="two">FadeOut</button>
+    <p id="three">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad adipisci autem labore. Sunt, atque eaque! Ratione maiores reiciendis nam totam ad soluta modi
+         quibusdam temporibus recusandae. Sunt asperiores neque odit?</p>
+         <br><br>
+     <p id="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non molestias iure in quod. Doloribus asperiores accusantium consequatur quos suscipit 
+        sit tempora enim repudiandae saepe nobis nemo, voluptatibus sunt omnis sapiente.</p> 
+        <br><br>
+        
+    <p id="five">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci excepturi quo voluptatibus nesciunt itaque ratione soluta, minima in 
+        omnis aperiam dolor iusto illum, officia, deleniti debitis voluptatum quisquam facilis cumque.</p>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+        <script>
+            $(document).ready(function(){
+                $("#one").click(function(){
+                    $("#three").fadeIn(1000);
+                    $("#four").fadeIn("slow");
+                    $("#five").fadeIn(3000);
+
+                });
+                $("#two").click(function(){
+                    $("#three").fadeOut(1000);
+                    $("#four").fadeOut("slow");
+                    $("#five").fadeOut(3000);
+                });
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            background-color: blue;
+            height: 50px;
+            text-align: center;
+            color: white;
+        }
+        .two{
+            background-color: tomato;
+            height: 200px;
+            text-align: center;
+            display: none;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>slidetoggle concept</h1>
+    <div class="one">CLICK HERE AMAZING FOR YOU</div>
+    <div class="two">HELLO SURAJ</div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".one").click(function(){
+                $(".two").slideToggle("fast");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the header of get content and attribute</h1>
+    <p id="sb">This is<b> awesome </b>place</p>
+    <label>Name:-</label>
+    <input id="me" type="text" name="name" value="suraj">
+    <a id="rk" href="https://www.amazon.in/">flipkart</a>
+    <button id="one">show text</button>
+    <button id="two">show html</button>
+    <button id="three">show value</button>
+    <button id="five">show attribute</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#one").click(function(){
+                console.log("text  :"+$("#sb").text());
+            });
+            $("#two").click(function(){
+                console.log("html  : "+$("#sb").html());
+            });
+            $("#three").click(function(){
+                console.log("value   :"+$("#me").val());
+            });
+            $("#five").click(function(){
+                console.log("href=" +$("#rk").attr("href"));
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

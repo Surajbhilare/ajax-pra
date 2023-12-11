@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .notice{
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .blue{
+            color: blue;
+        }
+        .button{
+            background-color: aqua;
+            color:red;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>css class add</h1>
+    <h2>head 2</h2>
+    <p>hi hello good morning everyone</p>
+    <div>this is important notice</div><br><br>
+    <button>add class</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"  ></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h1,h2,p").addClass("blue");
+                $("div").addClass("notice");
+                $("button").addClass("button");
+            });
+
+        });
+    </script>
+</body>
+</html>

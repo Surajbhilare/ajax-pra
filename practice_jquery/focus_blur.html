@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <button>submit</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input").focus(function(){
+                $(this).css("background-color","tomato");
+            });
+            $("input").blur(function(){
+                $(this).css("background-color","yellow");
+            });
+        });
+        // focus and blur function is used in so many input tag when we under the one input tag typing focus the color tomato 
+        // another input tag we enter then blur the color yellow to first input tag
+    </script>
+
+</body>
+</html>
